@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import { ThemeProvider } from "@/components/ThemeProvider"; 
 import { Inter } from "next/font/google";
 import { PropsWithChildren } from "react";
 
@@ -10,10 +10,11 @@ const inter = Inter({
 
 const RootLayout = (props: PropsWithChildren) => {
   return (
-    <html>
-      <body className={inter.className}>
-        <div className="flex flex-col items-stretch">
-        </div>
+    <html suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          
+        </ThemeProvider>
       </body>
     </html>
   );
